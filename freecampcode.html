@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 80px;
+            margin-left: 300px  ;
+
+        }
+        #count-el{
+            font-size: 60px;
+            margin-left: 480px;
+        }
+        #count-ell{
+            font-size: 60px;
+            margin-left: 480px;
+        }
+        #increment-btn{
+            font-size: 80px;
+            margin-left: 300px;
+            border: 2px solid black;
+            background-color: red;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        #increment-btnn{
+            font-size: 80px;
+            margin-top: 30px;
+            margin-left: 250px;
+            border: 2px solid black;
+            background-color: green;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        #enter{
+            margin-left: 450px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>people enter:</h1>
+    <h2 id="count-el">0</h2>
+    <button id="increment-btn" onclick="increment()">increasment</button>
+    <button id="increment-btnn" onclick="save()">save to page</button>
+    <h4 id="enter">previous: </h4>
+    <h2 id="count-ell">0</h2>
+    <button id="increment-btnn" onclick="three()">add three</button>
+    <button id="increment-btnn" onmouseover="one()" ondblclick="db()">decrease one</button>
+
+    <p>nike shoe</p>
+    <button id="btn" onclick="btnnnn()">purchase - $149</button>
+    <p id="error"></p>
+
+    
+    <script>
+        var i = 0
+        var incre = document.getElementById('count-el')
+
+        var number = 0
+        var countell = document.getElementById('count-ell')
+
+        //var btnnnn = document.getElementById('btn')
+
+         function btnnnn(){
+            var something = document.getElementById('error')
+            something.innerHTML = "something went wrong, please try again"
+        }
+
+        // let pre = 'previous: '
+
+        // const count = document.getElementById('increment-btn');
+
+        // count.onclick = function(){
+        //     document.getElementById('count-el').innerHTML = ++i;
+        // }
+        // function mynigga(){
+        //     console.log(42)
+        // }
+        // mynigga()
+
+        // function laps(){
+        //     console.log(34 + 33 + 36)
+        // }
+        // laps()
+        function increment(){
+            i = i + 2;
+            incre.innerHTML = i;
+
+        }
+
+        function save(){
+            let saviour = document.getElementById('enter')
+            let cr = i + " - "
+            saviour.innerHTML += cr
+            incre.innerHTML = 0
+            i = 0
+        }
+
+        function three(){
+           number += 3
+            countell.innerHTML = number
+        }
+
+        function one(){
+           number -= 1 
+            countell.innerHTML = number
+        }
+        function db(){
+           console.log(countell.innerText)
+        }
+
+        function same(){
+            let name = 'linda '
+            let greeting = 'hi there'
+            let namegreet = name + greeting
+            console.log(namegreet)
+        }
+        let per = 'ROSHEED '
+
+        let message = 'you have tree new notifications'
+
+        let massageToUser = per + message;
+        console.log(massageToUser)
+
+        let name = 'ROSHEED';
+        let greeting = 'Hi, my name is';
+        let mygreeting = greeting + ' ' + name + '!';
+        console.log(mygreeting)
+
+        let firstname = 'niggu '
+        let lastname = 'rough'
+        let fullname = firstname + lastname
+
+        console.log(fullname)
+
+    </script>
+</body>
+</html>

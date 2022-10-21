@@ -1,0 +1,305 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            width: 600px;
+            height: 400px;
+            background-color: green;
+            border: 4px solid black;
+            border-radius: 20px;
+        }
+        h1{
+            margin-top: 10px;
+            margin-left: 150px;
+            color: goldenrod;
+            font-size: 50px;
+        }
+        #message-el{
+            margin-top: 10px;
+            margin-left: 150px;
+            color: white; 
+            font-size: 30px;
+        }
+        p{
+            margin-top: 10px;
+            margin-left: 150px;
+            color: white;
+            font-size: 30px;  
+        }
+        #add{
+            width: 100px;
+            height: 40px;
+            background-color: red;
+            margin-left: 150px;
+            border-radius: 20px;
+        }
+        #apllle{
+            width: 230px;
+            height: 30px;
+            background-color: red;
+            border: 2px solid black;
+        }
+        #orange{
+            width: 230px;
+            height: 30px;
+            background-color: orange;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <span id="num1-el"></span>
+    <span id="num2-el"></span>
+
+    <br>
+
+    <button id="add" onclick="add()">add</button>
+    <button id="subtract" onclick="subtract()">subtract</button>
+    <button id="divide" onclick="divide()">divide</button>
+    <button id="multiply" onclick="multiply()">multiply </button>
+    <br>
+    <span id="num-el">sum: </span>
+
+    <br>
+
+    <br>
+
+    <div>
+        <h1>blackjack</h1>
+        <p id="omo">want to play a round</p>
+        <p id="omocard">cards:</p>
+        <p id="omosum">sum:</p>
+        <button id="add" onclick="startgame()">start game</button>
+        <button id="add" onclick="newcard()">new card</button>
+    </div>
+
+    <div id="apllle"></div>
+    <div id="orange"></div>
+    <h1 id="ourlife"></h1>
+<script>
+    let num1 = 8
+    let num2 = 2
+
+    
+    let cards = []
+    let bothcard = 0
+    let fimile = false
+    let isalive = false
+
+    console.log(bothcard)
+
+   
+
+    let message = " "
+    let messel = document.getElementById("omo")
+
+    let omomhi = document.getElementById("omosum")
+    let omochi = document.getElementById("omocard")
+
+function getRandomCard(){
+    return Math.floor(Math.random() * 13)
+}
+    function startgame(){
+
+        let firstcard = getRandomCard()
+        let secondcard = getRandomCard()
+        let cards = [firstcard, secondcard]
+        let bothcard = firstcard + secondcard 
+        
+        if (bothcard <= 20){
+            message = "do you want to draw a new card"
+        } else if (bothcard === 21){
+            message = "wohoo! you've got a blackjack"
+        
+        } else if(bothcard > 21) {
+            message = "you're out of the game"
+        }
+        messel.innerHTML = message 
+        
+        omomhi.innerHTML += " " + bothcard
+        for (i = 0; i < cards.length; i++ ){
+            omochi.innerHTML += cards[i] + " + "
+
+        }
+    }
+    
+    function newcard(){
+        console.log("drawing a new from the deck ")
+        if (isalive === true || fimile === false){
+            let thirdcard = getRandomCard()
+
+            if (bothcard + thirdcard <= 20){
+                message = "do you want to draw a new card"
+            } else if (bothcard + thirdcard === 21){
+                message = "wohoo! you've got a blackjack"
+            } else if(bothcard + thirdcard > 21) {
+                message = "you're out of the game"
+            }
+                messel.innerHTML = message 
+
+                omomhi.innerHTML += bothcard + thirdcard
+                omochi.innerHTML += thirdcard
+        }
+    }
+  
+
+    let age = 110
+
+    if (age < 100){
+        console.log("not eligible")
+    } else if ( age === 100) {
+        console.log("here is your birthday card from the king!")
+    } else {
+         console.log("not eligible, you have already gotten one")
+        }
+
+    var nu1 = document.getElementById("num1-el").innerHTML = num1
+    var nu2 = document.getElementById("num2-el").innerHTML = num2
+
+function add(){
+    var both = nu1 + nu2
+    var total = document.getElementById("num-el")
+    total.innerHTML += ' ' + both
+}
+
+function subtract(){
+    var both = nu1 - nu2
+    var total = document.getElementById("num-el")
+    total.innerHTML += ' ' + both
+}
+function divide(){
+    var both = nu1 / nu2
+    var total = document.getElementById("num-el")
+    total.innerHTML += ' ' + both
+}
+
+function multiply(){
+    var both = nu1 * nu2
+    var total = document.getElementById("num-el")
+    total.innerHTML += ' ' + both
+}
+
+let messagees = [
+    "hey, how's it going?",
+    "i'm great, thank you! how about you?",
+    "all good been working on my potfolio lately",
+    "same here!"
+]
+let greeting = document.getElementById("ourlife")
+// messagees.push()
+// messagees.pop()
+
+// console.log(messagees)
+
+// for( let i = 0; i < messagees.length; i++){
+//     greeting.textContent += messagees[i] + " "
+// }
+
+let sentence = ["hello", "my", "name", "is", "per"]
+
+
+// for (let i = 0; i < sentence.length;i ++){
+//     greeting.textContent = sentence[i]
+// }
+let player1time = 102
+let player2time = 107
+let total = player1time + player2time
+function totalracetime(){
+    return total
+}
+
+let allofus = totalracetime()
+
+console.log(allofus)
+
+let hassolvedchallenge = false
+let hashintsleft = false
+
+if(hassolvedchallenge === false && hashintsleft === false){
+    showsolution()
+    }
+
+function showsolution(){
+    console.log("showing the solution......")
+}
+
+let likedocumentries = true
+let likestartups = false
+
+if(likedocumentries === true || likestartups === false){
+    recommendmovies()
+}
+
+function recommendmovies(){
+    console.log("hey, check out this new film we think you wil like!")
+}
+
+let casttle = {
+    free : false,
+    view: "nice",
+    price: 190,
+    tags: ['html', 'css']
+}
+
+console.log(casttle.free, casttle.view)
+
+let nameme = "rasheed adeniji"
+let ageme = 18
+let country = "nigeria"
+
+function logdata(){
+    console.log(nameme + " " + "is" + " " + ageme + " " + "year old and live in " + country)
+}
+logdata()
+
+let agepassager = 176
+
+if (agepassager <= 6){
+    console.log("free")
+} else if( agepassager >= 6 && agepassager <= 17){
+    console.log("child discount")
+}else if ( agepassager >= 17 && agepassager <= 26 ){
+    console.log("student discount")
+}else if( agepassager >= 26 && agepassager <= 66 ){
+    console.log("full price")
+}else(console.log("senior citizen discount")) 
+
+let largecountries = ["china"," usa","india", "indonesia","pakistian"]
+
+for(i = 0; i <= largecountries.length; i++){
+    console.log(largecountries)
+}
+let dayofmatch = 31
+let weekend = "friday"
+
+if ( dayofmatch === 13 & weekend=== "friday"){
+    console.log("fkfj")
+}
+let handsdf = ["rock", "paper", "scissors"]
+
+// function radonia(){
+//     let dominus = math.floor ( math.random() * 3)
+//     return handsdf[dominus]
+// }
+
+// console.log( radonia() )
+let fruit = ["apple","orange","apple","apple","orange"]
+
+for(i = 0; i < fruit.length; i++){
+    if(fruit[i] === "apple"){
+        let apple = document.getElementById("apple")
+        apple.textContent = "apple"
+    } else if (fruit[i] === "orange"){
+        let apple = document.getElementById("orange")
+        apple.textContent = "orange"
+    }
+}
+
+</script>   
+</body>
+</html>

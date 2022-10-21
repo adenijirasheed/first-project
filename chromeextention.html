@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input-el{
+            width: 100%;
+            height: 40px;
+            padding-left: 10px;
+        }
+        #input-btn{
+            margin-top: 10px;
+            width: 200px;
+            height: 40px;
+            background-color: green;
+            color: white;
+        }
+        ul{
+        display: flex;
+        color: green;
+        margin: 0 20px;
+        list-style: none;
+        padding: 0;
+    }
+
+    .btn{
+        font-size: 16px;
+        background-color: red;
+        color: #fff;
+        outline: none;
+        border: none;
+        padding: 16px;
+
+    }
+    li{
+        margin-top: 10px;
+    }
+    a {
+        color: green;  
+    }
+    span{
+        margin-left: 100px;
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" id="input-el">
+    <button id="input-btn" >SAVE  INPUT</button>
+
+    <ul id="ul-El"></ul>
+    
+<!--  -->
+
+    </div>
+    
+    
+    <script>
+
+        let inputEl = document.getElementById("input-el")
+        let inputBtn = document.getElementById("input-btn")
+        let mylead = []
+        let ulEl = document.getElementById("ul-El")
+
+        
+        
+        
+        
+        inputBtn.addEventListener("click",function() {
+            // console.log("button was clicked")
+            // mylead.push(inputEl.value)
+            // inputEl.value = "";
+
+            const h1 = document.createElement("li");
+            h1.innerHTML = inputEl.value;
+            h1.className = "text";
+            ulEl.appendChild(h1);
+            
+        
+            const btn = document.createElement("button");
+            btn.innerHTML = 'X';
+            btn.className = "btn";
+            
+            
+            ulEl.appendChild(btn);
+          
+            document.querySelector('.btn').addEventListener('click', (e)=>{
+              
+                        document.querySelector('.btn').remove(parent);
+        
+                })
+        })
+
+      
+        
+        
+        function renderlist(){
+           
+
+
+           
+            // let listitems = ""
+        //     for(i = 0; i < mylead.length; i++){
+        //    listitems += "<li> <a target='_blank' href='" + mylead[i] + "'>" + mylead[i] + "</a><span>X<span></li>"
+            
+            // listitems += 
+            // // `<li>
+            // //     <a  href='#'>
+            // //         ${mylead[i]}<span>X</span>
+            // //     </a>
+            // // </li>
+            // // `;
+
+        //     let spam = document.querySelector("span");
+        // spam.className = "class"
+        //     var close = document.getElementsByClassName("class")
+        //     var r;
+        //     for (r = 0; r < close.length; r++) {
+        //     close[r].onclick = function() {
+        //         var div = this.parentElement;
+        //         div.style.display = "none";
+        //     }
+
+            
+
+            // ulEl.innerHTML = listitems
+            
+        }
+           
+        </script>
+</body>
+</html>
